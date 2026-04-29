@@ -736,17 +736,17 @@
                         <h3>🗺️ <span class="zh-only">无线电地图感知</span><span class="en-only">Radio Map Sensing</span></h3>
                         <p class="zh-only">
                             无线电地图是描述无线信号强度在空间分布的数字地图，在6G通信中扮演关键角色。我们团队在3D无线电地图生成与估计领域开展了系统深入的研究工作：
-                            <br>• <strong>RadioGen3D</strong>：基于2D传播模型和实测数据，通过对抗学习合成高质量3D无线电地图数据。该方法灵活高效、估计精确，且计算复杂度低，为解决3D地图数据稀缺问题提供了新思路
+                            <br>• <strong>RadioGen3D</strong>：基于2D传播模型和实测数据，通过回归拟合构建高质量3D无线电地图数据，形成了大规模3D无线电地图合成数据集，适合预训练用于无线电地图构建的AI模型。该方法灵活高效、估计精确，且计算复杂度低，为解决3D地图数据稀缺问题提供了新思路。同时，基于Radio3DMix数据集，提出了一种基于GAN方法的3D UNet模型训练方法，能够实现高精度三维无线电地图的实时构建，并已应用部署于真实校园场景
                             <br>• <strong>RadioDiff-3D</strong>：首个3D×3D无线电地图数据集，结合生成扩散模型构建基准测试平台，为6G环境感知通信研究提供重要支撑
-                            <br>• <strong>频谱感知</strong>：利用截断垂直联邦学习实现低延迟协同频谱感知，兼顾隐私保护与感知效率
-                            <br>• 通过GAN实现快速准确的协同无线电地图估计
+                            <br>• <strong>隐私敏感场景的分布式频谱感知</strong>：利用截断垂直联邦学习实现低延迟协同频谱感知，兼顾隐私保护与感知效率
+                            <br>• <strong>生成式无线电地图构建</strong>：通过GAN实现快速准确的协同无线电地图估计
                         </p>
                         <p class="en-only">
                             Radio map describes the spatial distribution of wireless signal strength and plays a key role in 6G communications. Our team has conducted systematic research on 3D radio map generation and estimation:
-                            <br>• <strong>RadioGen3D</strong>: Based on 2D propagation models and measured data, generates high-quality 3D radio map data via adversarial learning. This method is flexible, efficient, accurate with low computational complexity, providing a novel approach to solve 3D map data scarcity
+                            <br>• <strong>RadioGen3D</strong>: Based on 2D propagation models and measured data, constructs high-quality 3D radio map data through regression fitting, forming a large-scale 3D radio map synthetic dataset suitable for pretraining AI models. This method is flexible, efficient, accurate with low computational complexity, providing a novel approach to solve 3D map data scarcity. Moreover, based on the Radio3DMix dataset, we propose a GAN-based 3D UNet training method that enables real-time construction of high-precision 3D radio maps, already deployed in real campus scenarios
                             <br>• <strong>RadioDiff-3D</strong>: The first 3D×3D radio map dataset, combined with generative diffusion models to build a benchmark platform for 6G environment-aware communication research
-                            <br>• <strong>Spectrum Sensing</strong>: Low-latency cooperative spectrum sensing via truncated vertical federated learning, balancing privacy protection and sensing efficiency
-                            <br>• Fast and accurate cooperative radio map estimation via GAN
+                            <br>• <strong>Privacy-Preserving Distributed Spectrum Sensing</strong>: Low-latency cooperative spectrum sensing via truncated vertical federated learning, balancing privacy protection and sensing efficiency
+                            <br>• <strong>Generative Radio Map Construction</strong>: Fast and accurate cooperative radio map estimation via GAN
                         </p>
                     </div>
 
