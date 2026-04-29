@@ -708,7 +708,7 @@
                         <h3>🤖 <span class="zh-only">边缘学习</span><span class="en-only">Edge Learning</span></h3>
                         <p class="zh-only">联邦学习、分布式机器学习、边缘智能</p>
                         <p class="en-only">Federated Learning, Distributed Machine Learning, Edge Intelligence</p>
-                        <span class="paper-count"><span class="zh-only">2 篇论文</span><span class="en-only">2 Papers</span></span>
+                        <span class="paper-count"><span class="zh-only">3 篇论文</span><span class="en-only">3 Papers</span></span>
                     </a>
                     <a href="#b5g6g" class="interest-card">
                         <h3>📡 <span class="zh-only">B5G/6G通信</span><span class="en-only">B5G/6G Communication</span></h3>
@@ -720,7 +720,7 @@
                         <h3>🔗 <span class="zh-only">语义通信</span><span class="en-only">Semantic Communication</span></h3>
                         <p class="zh-only">语义通信、知识库增强通信、深度学习在无线通信中的应用</p>
                         <p class="en-only">Semantic Communication, Knowledge Base Enhanced, Deep Learning for Wireless</p>
-                        <span class="paper-count"><span class="zh-only">3 篇论文</span><span class="en-only">3 Papers</span></span>
+                        <span class="paper-count"><span class="zh-only">2 篇论文</span><span class="en-only">2 Papers</span></span>
                     </a>
                 </div>
             </div>
@@ -735,22 +735,34 @@
                     <div class="research-desc">
                         <h3>🗺️ <span class="zh-only">无线电地图感知</span><span class="en-only">Radio Map Sensing</span></h3>
                         <p class="zh-only">
-                            无线电地图是描述无线信号强度在空间分布的数字地图，在6G通信中扮演关键角色。我们团队提出利用生成扩散模型（Diffusion Model）和生成对抗网络（GAN）来快速、准确地估计3D无线电地图。与传统方法相比，我们的方法能够：
-                            <br>• 大幅降低地图估计的计算复杂度
-                            <br>• 利用少量测量点即可重建完整空间分布
-                            <br>• 支持实时动态地图更新
-                            <br>• 构建了首个3D×3D规模的RadioDiff-3D数据集，为6G环境感知通信提供基准
+                            无线电地图是描述无线信号强度在空间分布的数字地图，在6G通信中扮演关键角色。我们团队提出RadioGen3D框架，通过对抗学习在大规模合成数据上生成高保真3D无线电地图。同时，我们利用生成扩散模型（Diffusion Model）和生成对抗网络（GAN）来快速、准确地估计3D无线电地图。我们的方法能够：
+                            <br>• 通过数据合成方法生成高质量3D无线电地图数据
+                            <br>• 利用条件生成模型实现高效3D地图训练
+                            <br>• 构建了RadioDiff-3D数据集，为6G环境感知通信提供基准
+                            <br>• 通过GAN实现快速准确的协同无线电地图估计
                         </p>
                         <p class="en-only">
-                            Radio map describes the spatial distribution of wireless signal strength and plays a key role in 6G communications. Our team proposes using generative diffusion models and GANs for fast and accurate 3D radio map estimation. Our methods can:
-                            <br>• Significantly reduce computational complexity
-                            <br>• Reconstruct full spatial distribution from few measurement points
-                            <br>• Support real-time dynamic map updates
-                            <br>• Built the first RadioDiff-3D dataset for 6G environment-aware communication benchmarking
+                            Radio map describes the spatial distribution of wireless signal strength and plays a key role in 6G communications. Our team proposes the RadioGen3D framework, which generates high-fidelity 3D radio maps via adversarial learning on large-scale synthetic data. We also use generative diffusion models and GANs for fast and accurate 3D radio map estimation. Our methods can:
+                            <br>• Generate high-quality 3D radio map data through efficient data synthesis
+                            <br>• Implement efficient 3D map training with conditional generative models
+                            <br>• Built the RadioDiff-3D dataset for 6G environment-aware communication benchmarking
+                            <br>• Enable fast and accurate cooperative radio map estimation via GAN
                         </p>
                     </div>
 
                     <ul class="pub-list">
+                        <li class="pub-item">
+                            <div class="pub-title">
+                                <a href="https://arxiv.org/abs/2602.18744" target="_blank">RadioGen3D: 3D Radio Map Generation via Adversarial Learning on Large-Scale Synthetic Data</a>
+                            </div>
+                            <div class="pub-authors">
+                                J Chen, <span class="me">Z Zhang</span>, Q Zhang, C Wu, S Cui, X Shen
+                            </div>
+                            <div class="pub-meta">
+                                <span class="venue">arXiv:2602.18744</span>
+                                <span class="year">2026</span>
+                            </div>
+                        </li>
                         <li class="pub-item">
                             <div class="pub-title">
                                 <a href="https://ieeexplore.ieee.org/document/11083758" target="_blank">RadioDiff-3D: A 3D×3D radio map dataset and generative diffusion based benchmark for 6G environment-aware communication</a>
@@ -801,6 +813,18 @@
                     </div>
 
                     <ul class="pub-list">
+                        <li class="pub-item">
+                            <div class="pub-title">
+                                <a href="https://arxiv.org/abs/2602.19485" target="_blank">EMS-FL: Federated Tuning of Mixture-of-Experts in Satellite-Terrestrial Networks via Expert-Driven Model Splitting</a>
+                            </div>
+                            <div class="pub-authors">
+                                A Xu, <span class="me">Z Zhang</span>, Z Liu, S Cui
+                            </div>
+                            <div class="pub-meta">
+                                <span class="venue">arXiv:2602.19485</span>
+                                <span class="year">2026</span>
+                            </div>
+                        </li>
                         <li class="pub-item">
                             <div class="pub-title">
                                 <a href="https://ieeexplore.ieee.org/document/9750066" target="_blank">Accelerating Federated Edge Learning via Topology Optimization</a>
