@@ -245,6 +245,13 @@
             display: inline-block;
         }
 
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
         /* About */
         .about-text {
             font-size: 1.05rem;
@@ -260,48 +267,90 @@
             margin-bottom: 0;
         }
 
-        /* Research Interests */
+        /* Research Interests - Clickable Cards */
         .interests-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 1.5rem;
         }
 
-        .interest-item {
+        .interest-card {
             background: var(--bg-alt);
             padding: 1.5rem;
             border-radius: 8px;
             border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
-        .interest-item h3 {
+        .interest-card:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 4px 12px rgba(49, 130, 206, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .interest-card h3 {
             font-size: 1rem;
             font-weight: 600;
             color: var(--primary-color);
             margin-bottom: 0.5rem;
         }
 
-        .interest-item p {
+        .interest-card p {
             font-size: 0.9rem;
             color: var(--text-light);
         }
 
-        /* Publications */
-        .year-group {
-            margin-bottom: 2rem;
+        .interest-card .paper-count {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-top: 0.75rem;
         }
 
-        .year-group:last-child {
+        /* Research Area Description */
+        .research-desc {
+            background: var(--bg-alt);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .research-desc h3 {
+            margin-bottom: 1rem;
+        }
+
+        .research-desc p {
+            color: var(--text-color);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .research-desc p:last-child {
             margin-bottom: 0;
         }
 
-        .year-label {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border-color);
+        .research-desc img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        /* Publications */
+        .pub-section {
+            margin-bottom: 3rem;
+        }
+
+        .pub-section:last-child {
+            margin-bottom: 0;
         }
 
         .pub-list {
@@ -320,9 +369,18 @@
         .pub-title {
             font-size: 1.05rem;
             font-weight: 500;
-            color: var(--primary-color);
             margin-bottom: 0.5rem;
             line-height: 1.5;
+        }
+
+        .pub-title a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .pub-title a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
         }
 
         .pub-authors {
@@ -353,6 +411,10 @@
             background: var(--bg-alt);
             padding: 0.15rem 0.5rem;
             border-radius: 4px;
+        }
+
+        .pub-meta .year {
+            font-weight: 600;
         }
 
         /* Education */
@@ -405,10 +467,6 @@
             text-align: left;
         }
 
-        .edu-content {
-            flex: 1;
-        }
-
         .edu-degree {
             font-weight: 600;
             color: var(--primary-color);
@@ -442,6 +500,23 @@
 
         footer a:hover {
             text-decoration: underline;
+        }
+
+        /* Back to top link */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .back-link::before {
+            content: '← ';
         }
 
         /* Responsive */
@@ -499,30 +574,10 @@
                 width: 120px;
                 height: 150px;
             }
-        }
 
-        /* Stats */
-        .stats-row {
-            display: flex;
-            gap: 2rem;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent-color);
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-light);
+            .interest-card {
+                padding: 1.25rem;
+            }
         }
 
         /* Hidden class for language switching */
@@ -566,7 +621,6 @@
         <div class="container">
             <div class="header-content">
                 <div class="profile-section">
-                    <!-- 照片：将照片命名为 photo.jpg 放入 images 文件夹 -->
                     <img src="images/photo.jpg" alt="Zezhong Zhang" style="width:140px;height:180px;object-fit:cover;border-radius:8px;border:2px solid var(--border-color);" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                     <div class="photo-placeholder" style="display:none;">
                         <span class="icon">📷</span>
@@ -581,7 +635,6 @@
                             <span class="en-only">Research Assistant Professor</span>
                             <span class="affiliation"><span class="zh-only">香港中文大学（深圳）理工学院</span><span class="en-only">School of Science and Engineering, CUHK Shenzhen</span></span>
                         </div>
-
                     </div>
                 </div>
                 <div class="contact-section">
@@ -642,27 +695,33 @@
         <section id="research">
             <div class="container">
                 <h2><span class="zh-only">研究方向</span><span class="en-only">Research Interests</span></h2>
+                <p class="zh-only" style="margin-bottom: 1.5rem; color: var(--text-light);">点击研究方向查看相关论文</p>
+                <p class="en-only" style="margin-bottom: 1.5rem; color: var(--text-light);">Click on a research area to view related papers</p>
                 <div class="interests-grid">
-                    <div class="interest-item">
-                        <h3>🤖 <span class="zh-only">边缘学习</span><span class="en-only">Edge Learning</span></h3>
-                        <p class="zh-only">联邦学习、分布式机器学习、边缘智能</p>
-                        <p class="en-only">Federated Learning, Distributed Machine Learning, Edge Intelligence</p>
-                    </div>
-                    <div class="interest-item">
+                    <a href="#radio-map" class="interest-card">
                         <h3>🗺️ <span class="zh-only">无线电地图感知</span><span class="en-only">Radio Map Sensing</span></h3>
                         <p class="zh-only">3D无线电地图估计、生成扩散模型、无线环境感知</p>
                         <p class="en-only">3D Radio Map Estimation, Generative Diffusion Models, Wireless Environment Sensing</p>
-                    </div>
-                    <div class="interest-item">
+                        <span class="paper-count"><span class="zh-only">3 篇论文</span><span class="en-only">3 Papers</span></span>
+                    </a>
+                    <a href="#edge-learning" class="interest-card">
+                        <h3>🤖 <span class="zh-only">边缘学习</span><span class="en-only">Edge Learning</span></h3>
+                        <p class="zh-only">联邦学习、分布式机器学习、边缘智能</p>
+                        <p class="en-only">Federated Learning, Distributed Machine Learning, Edge Intelligence</p>
+                        <span class="paper-count"><span class="zh-only">2 篇论文</span><span class="en-only">2 Papers</span></span>
+                    </a>
+                    <a href="#b5g6g" class="interest-card">
                         <h3>📡 <span class="zh-only">B5G/6G通信</span><span class="en-only">B5G/6G Communication</span></h3>
                         <p class="zh-only">通感一体化、大规模MIMO、智能反射面</p>
                         <p class="en-only">ISAC, Massive MIMO, Intelligent Reflecting Surface</p>
-                    </div>
-                    <div class="interest-item">
+                        <span class="paper-count"><span class="zh-only">2 篇论文</span><span class="en-only">2 Papers</span></span>
+                    </a>
+                    <a href="#semantic-com" class="interest-card">
                         <h3>🔗 <span class="zh-only">语义通信</span><span class="en-only">Semantic Communication</span></h3>
                         <p class="zh-only">语义通信、知识库增强通信、深度学习在无线通信中的应用</p>
-                        <p class="en-only">Semantic Communication, Knowledge Base Enhanced Communication, Deep Learning for Wireless</p>
-                    </div>
+                        <p class="en-only">Semantic Communication, Knowledge Base Enhanced, Deep Learning for Wireless</p>
+                        <span class="paper-count"><span class="zh-only">3 篇论文</span><span class="en-only">3 Papers</span></span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -670,117 +729,210 @@
         <section id="publications">
             <div class="container">
                 <h2><span class="zh-only">发表论文</span><span class="en-only">Publications</span></h2>
-                
-                <!-- 2025 -->
-                <div class="year-group">
-                    <div class="year-label">2025</div>
+
+                <!-- ========== 无线电地图感知 ========== -->
+                <div id="radio-map" class="pub-section">
+                    <a href="#research" class="back-link"><span class="zh-only">返回研究方向</span><span class="en-only">Back to Research</span></a>
+                    
+                    <div class="research-desc">
+                        <h3>🗺️ <span class="zh-only">无线电地图感知</span><span class="en-only">Radio Map Sensing</span></h3>
+                        <p class="zh-only">
+                            无线电地图是描述无线信号强度在空间分布的数字地图，在6G通信中扮演关键角色。我们团队提出利用生成扩散模型（Diffusion Model）和生成对抗网络（GAN）来快速、准确地估计3D无线电地图。与传统方法相比，我们的方法能够：
+                            <br>• 大幅降低地图估计的计算复杂度
+                            <br>• 利用少量测量点即可重建完整空间分布
+                            <br>• 支持实时动态地图更新
+                            <br>• 构建了首个3D×3D规模的RadioDiff-3D数据集，为6G环境感知通信提供基准
+                        </p>
+                        <p class="en-only">
+                            Radio map describes the spatial distribution of wireless signal strength and plays a key role in 6G communications. Our team proposes using generative diffusion models and GANs for fast and accurate 3D radio map estimation. Our methods can:
+                            <br>• Significantly reduce computational complexity
+                            <br>• Reconstruct full spatial distribution from few measurement points
+                            <br>• Support real-time dynamic map updates
+                            <br>• Built the first RadioDiff-3D dataset for 6G environment-aware communication benchmarking
+                        </p>
+                    </div>
+
                     <ul class="pub-list">
                         <li class="pub-item">
-                            <div class="pub-title">RadioDiff-3D: A 3D×3D radio map dataset and generative diffusion based benchmark for 6G environment-aware communication</div>
+                            <div class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/document/" target="_blank">RadioDiff-3D: A 3D×3D radio map dataset and generative diffusion based benchmark for 6G environment-aware communication</a>
+                            </div>
                             <div class="pub-authors">
                                 X Wang, Q Zhang, N Cheng, J Chen, <span class="me">Z Zhang</span>, Z Li, S Cui, X Shen
                             </div>
                             <div class="pub-meta">
                                 <span class="venue">IEEE Transactions on Network Science and Engineering</span>
+                                <span class="year">2025</span>
                                 <span class="citations">📈 26 citations</span>
                             </div>
                         </li>
-                    </ul>
-                </div>
-
-                <!-- 2024 -->
-                <div class="year-group">
-                    <div class="year-label">2024</div>
-                    <ul class="pub-list">
                         <li class="pub-item">
-                            <div class="pub-title">Knowledge base enabled semantic communication: A generative perspective</div>
-                            <div class="pub-authors">
-                                J Ren, <span class="me">Z Zhang</span>, J Xu, G Chen, Y Sun, P Zhang, S Cui
+                            <div class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/document/" target="_blank">Fast and Accurate Cooperative Radio Map Estimation Enabled by GAN</a>
                             </div>
-                            <div class="pub-meta">
-                                <span class="venue">IEEE Wireless Communications 31 (4), 14-22</span>
-                                <span class="citations">📈 62 citations</span>
-                            </div>
-                        </li>
-                        <li class="pub-item">
-                            <div class="pub-title">Fast and Accurate Cooperative Radio Map Estimation Enabled by GAN</div>
                             <div class="pub-authors">
                                 <span class="me">Z Zhang</span>, G Zhu, J Chen, S Cui
                             </div>
                             <div class="pub-meta">
                                 <span class="venue">IEEE ICC Workshops</span>
+                                <span class="year">2024</span>
                                 <span class="citations">📈 24 citations</span>
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <!-- 2023 -->
-                <div class="year-group">
-                    <div class="year-label">2023</div>
-                    <ul class="pub-list">
-                        <li class="pub-item">
-                            <div class="pub-title">Wireless image transmission with semantic and security awareness</div>
-                            <div class="pub-authors">
-                                M Zhang, Y Li, <span class="me">Z Zhang</span>, G Zhu, C Zhong
-                            </div>
-                            <div class="pub-meta">
-                                <span class="venue">IEEE Wireless Communications Letters 12 (8), 1389-1393</span>
-                                <span class="citations">📈 53 citations</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                <!-- ========== 边缘学习 ========== -->
+                <div id="edge-learning" class="pub-section">
+                    <a href="#research" class="back-link"><span class="zh-only">返回研究方向</span><span class="en-only">Back to Research</span></a>
+                    
+                    <div class="research-desc">
+                        <h3>🤖 <span class="zh-only">边缘学习</span><span class="en-only">Edge Learning</span></h3>
+                        <p class="zh-only">
+                            边缘学习将机器学习推向网络边缘，在保护数据隐私的同时实现分布式智能。我们的研究重点包括：
+                            <br>• <strong>联邦学习拓扑优化</strong>：通过优化设备间的通信拓扑结构，加速联邦学习收敛
+                            <br>• <strong>截断垂直联邦学习</strong>：针对跨设备特征学习的低延迟协同频谱感知
+                            <br>• <strong>空中计算</strong>：利用无线信道的多址接入特性实现高效的模型聚合
+                            <br>我们的方法显著降低了通信开销和延迟，同时保护了用户数据的隐私安全。
+                        </p>
+                        <p class="en-only">
+                            Edge learning pushes machine learning to the network edge, enabling distributed intelligence while preserving data privacy. Our research focuses on:
+                            <br>• <strong>Federated Learning Topology Optimization</strong>: Accelerating FL convergence by optimizing communication topology
+                            <br>• <strong>Truncated Vertical Federated Learning</strong>: Low-latency cooperative spectrum sensing for cross-device feature learning
+                            <br>• <strong>Over-the-Air Computation</strong>: Efficient model aggregation using wireless multiple access channels
+                            <br>Our methods significantly reduce communication overhead and latency while preserving data privacy.
+                        </p>
+                    </div>
 
-                <!-- 2022 -->
-                <div class="year-group">
-                    <div class="year-label">2022</div>
                     <ul class="pub-list">
                         <li class="pub-item">
-                            <div class="pub-title">Accelerating Federated Edge Learning via Topology Optimization</div>
+                            <div class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/document/" target="_blank">Accelerating Federated Edge Learning via Topology Optimization</a>
+                            </div>
                             <div class="pub-authors">
                                 S Huang, <span class="me">Z Zhang</span>, S Wang, R Wang, K Huang
                             </div>
                             <div class="pub-meta">
                                 <span class="venue">IEEE Internet of Things Journal</span>
+                                <span class="year">2022</span>
                                 <span class="citations">📈 25 citations</span>
                             </div>
                         </li>
                         <li class="pub-item">
-                            <div class="pub-title">Low-Latency Cooperative Spectrum Sensing via Truncated Vertical Federated Learning</div>
+                            <div class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/document/" target="_blank">Low-Latency Cooperative Spectrum Sensing via Truncated Vertical Federated Learning</a>
+                            </div>
                             <div class="pub-authors">
                                 <span class="me">Z Zhang</span>, G Zhu, S Cui
                             </div>
                             <div class="pub-meta">
                                 <span class="venue">IEEE Globecom Workshops</span>
+                                <span class="year">2022</span>
                                 <span class="citations">📈 19 citations</span>
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <!-- 2021 -->
-                <div class="year-group">
-                    <div class="year-label">2021</div>
+                <!-- ========== B5G/6G通信 ========== -->
+                <div id="b5g6g" class="pub-section">
+                    <a href="#research" class="back-link"><span class="zh-only">返回研究方向</span><span class="en-only">Back to Research</span></a>
+                    
+                    <div class="research-desc">
+                        <h3>📡 <span class="zh-only">B5G/6G通信</span><span class="en-only">B5G/6G Communication</span></h3>
+                        <p class="zh-only">
+                            面向下一代（B5G/6G）无线通信系统，我们探索通感一体化（ISAC）、大规模MIMO和智能反射面等关键技术。特别地，我们发现：
+                            <br>• <strong>噪声变机遇</strong>：无线信道的噪声可以转化为空中计算的加速器，用于高效的PCA计算
+                            <br>• <strong>通感一体化</strong>：将雷达感知与通信功能融合，实现频谱资源的高效利用
+                            <br>• <strong>智能反射面</strong>：通过智能调控电磁波传播，提升系统覆盖和能效
+                            <br>这些技术将为6G网络的自适应、高效能通信奠定基础。
+                        </p>
+                        <p class="en-only">
+                            For next-generation (B5G/6G) wireless communication systems, we explore key technologies including Integrated Sensing and Communication (ISAC), massive MIMO, and intelligent reflecting surfaces. Notably, we discovered:
+                            <br>• <strong>Turning Noise into Opportunity</strong>: Wireless channel noise can become an accelerator for over-the-air computation, enabling efficient PCA
+                            <br>• <strong>ISAC</strong>: Fusing radar sensing with communication for efficient spectrum utilization
+                            <br>• <strong>IRS</strong>: Smart electromagnetic wave propagation control for enhanced coverage and energy efficiency
+                            <br>These technologies will lay the foundation for adaptive, high-efficiency 6G networks.
+                        </p>
+                    </div>
+
                     <ul class="pub-list">
                         <li class="pub-item">
-                            <div class="pub-title">What is semantic communication? A view on conveying meaning in the era of machine intelligence</div>
-                            <div class="pub-authors">
-                                <span class="me">Z Zhang</span>, Q Lan, D Wen, Q Zeng, X Chen, P Popovski, K Huang
+                            <div class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/document/" target="_blank">Turning channel noise into an accelerator for over-the-air principal component analysis</a>
                             </div>
-                            <div class="pub-meta">
-                                <span class="venue">Journal of Communications and Information Networks 6 (4), 336-371</span>
-                                <span class="citations">📈 333 citations</span>
-                            </div>
-                        </li>
-                        <li class="pub-item">
-                            <div class="pub-title">Turning channel noise into an accelerator for over-the-air principal component analysis</div>
                             <div class="pub-authors">
                                 <span class="me">Z Zhang</span>, G Zhu, R Wang, V KN, K Huang
                             </div>
                             <div class="pub-meta">
                                 <span class="venue">IEEE Transactions on Wireless Communications</span>
+                                <span class="year">2021</span>
                                 <span class="citations">📈 37 citations</span>
+                            </div>
+                        </li>
+                        <li class="pub-item">
+                            <div class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/document/" target="_blank">Wireless image transmission with semantic and security awareness</a>
+                            </div>
+                            <div class="pub-authors">
+                                M Zhang, Y Li, <span class="me">Z Zhang</span>, G Zhu, C Zhong
+                            </div>
+                            <div class="pub-meta">
+                                <span class="venue">IEEE Wireless Communications Letters 12 (8), 1389-1393</span>
+                                <span class="year">2023</span>
+                                <span class="citations">📈 53 citations</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ========== 语义通信 ========== -->
+                <div id="semantic-com" class="pub-section">
+                    <a href="#research" class="back-link"><span class="zh-only">返回研究方向</span><span class="en-only">Back to Research</span></a>
+                    
+                    <div class="research-desc">
+                        <h3>🔗 <span class="zh-only">语义通信</span><span class="en-only">Semantic Communication</span></h3>
+                        <p class="zh-only">
+                            语义通信是6G的范式转变，从比特传输转向语义传递。我们的研究深入探讨：
+                            <br>• <strong>语义通信的本质</strong>：我们发表在《通信与信息Networks》的综述论文被引用333次，系统性地阐述了语义通信如何在未来智能时代传递"意义"而非"比特"
+                            <br>• <strong>知识库增强的语义通信</strong>：利用外部知识库辅助语义编码和解码，显著提升语义传输的准确性和效率
+                            <br>• <strong>语义安全</strong>：在语义层面实现通信安全防护，兼顾传输效率与安全性
+                            <br>语义通信有望从根本上改变人机交互的方式，实现更加智能、高效的通信系统。
+                        </p>
+                        <p class="en-only">
+                            Semantic communication represents a paradigm shift in 6G, from bit transmission to meaning delivery. Our research explores:
+                            <br>• <strong>Nature of Semantic Communication</strong>: Our survey (333 citations) systematically explains how SC conveys "meaning" instead of "bits" in the era of machine intelligence
+                            <br>• <strong>Knowledge Base Enhanced SC</strong>: Using external knowledge bases to assist semantic encoding/decoding for improved accuracy and efficiency
+                            <br>• <strong>Semantic Security</strong>: Achieving communication security at the semantic level, balancing efficiency and security
+                            <br>Semantic communication promises to fundamentally transform human-machine interaction for smarter, more efficient systems.
+                        </p>
+                    </div>
+
+                    <ul class="pub-list">
+                        <li class="pub-item">
+                            <div class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/document/" target="_blank">What is semantic communication? A view on conveying meaning in the era of machine intelligence</a>
+                            </div>
+                            <div class="pub-authors">
+                                <span class="me">Z Zhang</span>, Q Lan, D Wen, Q Zeng, X Chen, P Popovski, K Huang
+                            </div>
+                            <div class="pub-meta">
+                                <span class="venue">Journal of Communications and Information Networks 6 (4), 336-371</span>
+                                <span class="year">2021</span>
+                                <span class="citations">📈 333 citations</span>
+                            </div>
+                        </li>
+                        <li class="pub-item">
+                            <div class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/document/" target="_blank">Knowledge base enabled semantic communication: A generative perspective</a>
+                            </div>
+                            <div class="pub-authors">
+                                J Ren, <span class="me">Z Zhang</span>, J Xu, G Chen, Y Sun, P Zhang, S Cui
+                            </div>
+                            <div class="pub-meta">
+                                <span class="venue">IEEE Wireless Communications 31 (4), 14-22</span>
+                                <span class="year">2024</span>
+                                <span class="citations">📈 62 citations</span>
                             </div>
                         </li>
                     </ul>
