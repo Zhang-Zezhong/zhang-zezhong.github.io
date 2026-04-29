@@ -366,6 +366,7 @@
             padding-bottom: 2rem;
             position: relative;
             padding-left: 1.5rem;
+            align-items: flex-start;
         }
 
         .edu-item:last-child {
@@ -387,16 +388,21 @@
         }
 
         .edu-year {
-            min-width: 130px;
+            min-width: 160px;
             font-weight: 600;
             color: var(--accent-color);
             font-size: 0.95rem;
             flex-shrink: 0;
+            white-space: nowrap;
         }
 
         .edu-content {
             flex: 1;
             min-width: 0;
+        }
+
+        .edu-degree, .edu-school {
+            text-align: left;
         }
 
         .edu-content {
@@ -561,7 +567,7 @@
             <div class="header-content">
                 <div class="profile-section">
                     <!-- 照片：将照片命名为 photo.jpg 放入 images 文件夹 -->
-                    <img src="images/正面照.jpg" alt="Zezhong Zhang" style="width:140px;height:180px;object-fit:cover;border-radius:8px;border:2px solid var(--border-color);" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <img src="images/photo.jpg" alt="Zezhong Zhang" style="width:140px;height:180px;object-fit:cover;border-radius:8px;border:2px solid var(--border-color);" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                     <div class="photo-placeholder" style="display:none;">
                         <span class="icon">📷</span>
                         <span class="zh-only">添加照片<br>images/photo.jpg</span>
