@@ -547,10 +547,12 @@
         <div class="container">
             <div class="header-content">
                 <div class="profile-section">
-                    <div class="photo-placeholder">
+                    <!-- 照片：将照片命名为 photo.jpg 放入 images 文件夹 -->
+                    <img src="images/photo.jpg" alt="Zezhong Zhang" style="width:140px;height:180px;object-fit:cover;border-radius:8px;border:2px solid var(--border-color);" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="photo-placeholder" style="display:none;">
                         <span class="icon">📷</span>
-                        <span class="zh-only">添加照片</span>
-                        <span class="en-only">Add Photo</span>
+                        <span class="zh-only">添加照片<br>images/photo.jpg</span>
+                        <span class="en-only">Add Photo<br>images/photo.jpg</span>
                     </div>
                     <div class="name-section">
                         <h1>张泽中</h1>
@@ -558,22 +560,9 @@
                         <div class="position">
                             <span class="zh-only">研究助理教授</span>
                             <span class="en-only">Research Assistant Professor</span>
-                            <span class="affiliation"> | <span class="zh-only">香港中文大学（深圳）理工学院</span><span class="en-only">School of Science and Engineering, CUHK Shenzhen</span></span>
+                            <span class="affiliation"><span class="zh-only">香港中文大学（深圳）理工学院</span><span class="en-only">School of Science and Engineering, CUHK Shenzhen</span></span>
                         </div>
-                        <div class="stats-row">
-                            <div class="stat-item">
-                                <div class="stat-value">632</div>
-                                <div class="stat-label"><span class="zh-only">总引用</span><span class="en-only">Citations</span></div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-value">9</div>
-                                <div class="stat-label">h-index</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-value">20+</div>
-                                <div class="stat-label"><span class="zh-only">发表论文</span><span class="en-only">Papers</span></div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 <div class="contact-section">
