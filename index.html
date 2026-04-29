@@ -365,6 +365,7 @@
             gap: 2rem;
             padding-bottom: 2rem;
             position: relative;
+            padding-left: 1.5rem;
         }
 
         .edu-item:last-child {
@@ -386,10 +387,11 @@
         }
 
         .edu-year {
-            min-width: 100px;
+            min-width: 120px;
             font-weight: 600;
             color: var(--accent-color);
             font-size: 0.95rem;
+            flex-shrink: 0;
         }
 
         .edu-content {
@@ -475,10 +477,7 @@
             .edu-item {
                 flex-direction: column;
                 gap: 0.5rem;
-            }
-
-            .edu-item::before {
-                display: none;
+                padding-left: 0;
             }
 
             .photo-placeholder {
