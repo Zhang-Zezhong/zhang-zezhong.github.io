@@ -3,7 +3,7 @@
 This is the personal academic website of Zezhong Zhang (张泽中), Research Assistant Professor at CUHK Shenzhen.
 
 ## 🔗 Live Website
-**https://zezhong-zhang.github.io/**
+**https://zhang-zezhong.github.io/**
 
 ## 📋 About
 
